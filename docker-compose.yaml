@@ -1,0 +1,48 @@
+version: '3.1'
+services:
+  frontend:
+    container_name: FRONTEND
+    image: carone/frontendcontainer:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app/frontend:/var/app:consistent
+      - ./app/frontend/package.json:/var/app/package.json
+      - ./app/frontend/package-lock.json:/var/app/package-lock.json
+      - notused:/var/app/node_modules
+
+  backend:
+    container_name: BACKEND
+    image: carone/backendcontainer:latest
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./app/backend:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    container_name: DB
+    image: mariadb:10.5.9
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_SERVERNAME: localhost
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: example
+
+  phpmyadmin:
+    container_name: PHPMYADMIN
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+volumes:
+  notused:
