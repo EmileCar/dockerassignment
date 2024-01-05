@@ -1,0 +1,329 @@
+/*   APP CSS: Algemene styling classes die voor elke pagina kan terugkomen   */
+.inherit-font {
+	font-family: inherit;
+	color: inherit;
+	font-size: inherit;
+}
+
+
+.button {
+	background-color: var(--main-color);
+	padding: var(--s0);
+	border-radius: 4rem;
+	color: white;
+	text-decoration: none;
+	transition: transform 0.1s ease-in-out;
+	display: inline-block;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+}
+
+.button:hover {
+	transform: scale(1.1);
+}
+
+.button-inverted {
+	background-color: white;
+	color: var(--main-color);
+}
+
+.link {
+	color: white;
+	text-decoration: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.cursive{
+	text-decoration: underline;
+	font-style: italic;
+	color: inherit;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.layered-grid {
+	display: grid;
+	place-items: center;
+}
+
+.layered-grid>* {
+	grid-row: 1;
+	grid-column: 1;
+}
+
+
+.page__container {
+	color: var(--main-color);
+	margin-top: 9rem;
+	text-align: center;
+	padding: var(--s0);
+}
+
+.page__section {
+	max-width: 60rem;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 55rem) {
+	.page__section .section-title__container {
+		align-items: flex-start;
+	}
+
+	.page__container {
+		text-align: left;
+	}
+}
+
+.page__section__container{
+	margin: var(--s2) 0;
+	border-top: 0.2rem solid var(--main-color);
+}
+
+.section-title__container {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: var(--s1);
+	align-items: center;
+}
+
+.section-title {
+	font-family: var(--title-font);
+	font-size: 3rem;
+	text-transform: uppercase;
+}
+
+.section__title--border {
+	height: 10px;
+	width: 4rem;
+	background-color: white;
+}
+
+.section__title--border.blue {
+	background-color: var(--main-color);
+}
+
+.more__link a {
+	color: white;
+	text-decoration: underline;
+	font-style: italic;
+	font-size: 80%;
+}
+
+.error{
+	color: var(--error-color)
+}
+
+.flex__container {
+	display: flex;
+	gap: var(--s2);
+	align-items: flex-start;
+	flex-direction: column-reverse;
+	text-align: center;
+}
+
+.flex__container img {
+	width: 85%;
+	max-width: 400px;
+	align-self: center;
+}
+
+.flex__container--text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s-1);
+}
+
+@media screen and (min-width: 55rem) {
+	.flex__container {
+		flex-direction: row;
+		text-align: left;
+	}
+
+	.flex__container .section-title__container {
+		align-items: flex-start;
+	}
+
+	.event-text__container {
+		text-align: left;
+	}
+}
+
+.round-image {
+	border-radius: 100%;
+}
+
+form .label{
+	font-weight: bold;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.2rem;
+}
+
+label.error {
+	color: var(--error-color);
+  	position: relative;
+}
+.error-message{
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+}
+.label.error .error-message {
+	opacity: 1;
+	pointer-events: initial;
+	visibility: visible;
+	position: relative;
+	top: 100%;
+	right: 0;
+	font-style: italic;
+	font-size: 1.1rem;
+}
+.label.error .input {
+	border: var(--s-2) solid var(--error-color);
+	outline: none;
+}
+
+form .input {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	padding: var(--s-1);
+	display: block;
+	width: 100%;
+	outline: var(--s-99) solid var(--main-color);
+	border: var(--s-2) solid transparent;
+}
+form .input::placeholder{
+    color: var(--main-color);
+    opacity: 0.5;
+}
+form .input:disabled{
+	background-color: rgb(228, 228, 228);
+	outline: var(--s-99) solid gray;
+	color: gray;
+}
+form .form-group{
+	display: flex;
+	gap: 1rem;
+}
+form .form-group__half{
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+}
+form .verplicht{
+	color: var(--error-color);
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media screen and (max-width: 740px) {
+	form .form-group{
+		flex-wrap: wrap;
+	}
+}
+
+
+/* Hide the default checkbox */
+.custom-checkbox {
+    display: none;
+  }
+  
+  /* Style the custom checkbox */
+  .checkbox-label {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Style the custom checkbox when checked */
+  .custom-checkbox:checked + .checkbox-label {
+    background-color: var(--main-color);
+	background-image: url("assets/img/icons/checkIcon.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+  }
+  
+  /* Add a checkmark inside the checked checkbox */
+  .custom-checkbox:checked + .checkbox-label::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  /* Style the label text (optional) */
+  .checkbox-label::before {
+  }
+
+.input-dropdown{
+  padding: 0px !important;
+  width: 100% !important;
+  display: flex !important;
+}
+
+.p-inputtext{
+  border: 0 !important;
+  outline: 0 !important;
+  padding: var(--s-1) !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	z-index: 2;
+}
+.popup {
+	margin: 8rem auto;
+	padding: 20px;
+	background: #fff;
+	border-radius: 5px;
+	width: 95%;
+	max-height: 70%;
+	overflow-y: auto;
+	position: relative;
+}  
+.popup .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--main-color);
+}
+.popup .close:hover {
+	cursor: pointer;
+	color: #000;
+}
+
+@media screen and (max-width: 700px) {
+	.popup {
+		width: 70%;
+	}
+}

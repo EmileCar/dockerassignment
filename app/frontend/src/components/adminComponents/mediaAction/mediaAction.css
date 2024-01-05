@@ -1,0 +1,11 @@
+.mediaItemForm-top{
+    display: grid;
+    gap: var(--s1);
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: var(--s1);
+    align-items: start;
+}
+
+.fileInput{
+    cursor: pointer;
+}

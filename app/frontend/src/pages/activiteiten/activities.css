@@ -1,0 +1,25 @@
+.page--activity__detail{
+	gap: var(--s1);
+	display: flex;
+	flex-direction: column-reverse;
+	padding-bottom: 4rem;
+	padding-top: 1rem;
+}
+
+.page--activity__detail img{
+	max-width: 90%;
+	max-height: 100%;
+}
+
+.page--activity__detail .right-side{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media screen and (min-width: 55rem) {
+	.page--activity__detail {
+		display: grid;
+		grid-template-columns: 50% 50%;
+	}
+}

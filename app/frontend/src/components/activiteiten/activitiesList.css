@@ -1,0 +1,132 @@
+.activities__container {
+	margin: var(--s2) 0;
+	margin-bottom: var(--s0);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: var(--s1);
+	position: relative;
+}
+
+.activity {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: var(--s1);
+	gap: var(--s0);
+	color: inherit;
+	text-decoration: none;
+}
+
+.activity__edit-button{
+	margin-left: var(--s0);
+}
+.activity__edit-button::before{
+	background-image: url('../../assets/img/icons/pencilIcon.svg');
+	background-repeat: no-repeat;
+	width: 1.3rem;
+	height: 1.3rem;
+	content: "";
+	display: inline-block;
+}
+
+.activity:not(.activity:last-of-type)::after {
+	content: "";
+	background: var(--light-color);
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	height: 2px;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 55rem) {
+	.activity {
+		flex-direction: row;
+		gap: var(--s2);
+	}
+}
+
+.activity__title {
+	font-family: var(--title-font);
+	font-size: 2rem;
+	text-decoration: underline;
+	grid-area: title;
+	margin-bottom: var(--s-1);
+}
+
+.activity img {
+	grid-area: img;
+	max-height: 20rem;
+	max-width: 50%;
+}
+
+.activity__details {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s-2);
+}
+
+
+.activity__detail.date::before{
+	content: '';
+	height: 1.2rem;
+	width: 1.2rem;
+	margin-right: var(--s-1);
+	position: relative;
+	display: inline-block;
+	background-image: url('../../assets/img/icons/calendarIcon.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.activity__detail.time::before {
+	content: '';
+	height: 1.2rem;
+	width: 1.2rem;
+	margin-right: var(--s-1);
+	display: inline-block;
+	background-image: url('../../assets/img/icons/clockIcon.svg');
+	background-repeat: no-repeat;
+	background-size: 95%;
+	position: relative;
+	top: 2px;
+}
+
+.activity__detail.location::before {
+	content: '';
+	height: 1.2rem;
+	width: 1.2rem;
+	margin-right: var(--s-1);
+	display: inline-block;
+	background-image: url('../../assets/img/icons/locationIcon.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	top: 2px;
+}
+
+.activity__detail.url::before {
+	content: '';
+	height: 1.3rem;
+	width: 1.3rem;
+	margin-right: var(--s-1);
+	display: inline-block;
+	background-image: url('../../assets/img/icons/facebookIconBlue.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+	top: 2px;
+}
+
+.activity__detail.description{
+	margin-top: var(--s1);
+}
+
+.activity__detail.urgent{
+	font-size: 0.9rem;
+	color: var(--error-color);
+}

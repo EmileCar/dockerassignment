@@ -1,0 +1,46 @@
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: var(--s0);
+    margin: var(--s0) 0;
+}
+.loginForm label {
+	font-weight: bold;
+}
+
+
+.label-error {
+	color: var(--error-color);
+}
+
+
+.label-error .error {
+	opacity: 1;
+	pointer-events: initial;
+	visibility: visible;
+
+}
+
+.label-error .input {
+	border: var(--s-2) solid var(--error-color);
+	outline: none;
+}
+
+.loginForm .input {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	padding: var(--s-1);
+	display: block;
+	width: 100%;
+	outline: var(--s-99) solid var(--main-color);
+	border: var(--s-2) solid transparent;
+}
+
+.loginForm .submit-button{
+    border-radius: 0;
+}
+
+.submit-button:hover{
+    transform: none;
+}
